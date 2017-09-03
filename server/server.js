@@ -11,13 +11,13 @@ const port = process.env.PORT || 3000
 var app = express();
 var server = http.createServer(app);
 var io = socketIO(server);
-var userCount = 0;
-var users = [];
+// var userCount = 0;
+// var users = [];
 app.use(express.static(publicPath));
 
 
 io.on('connection', (socket) => {
-	var user ={};
+	// var user ={};
 	console.log('New user connect');
 	socket.emit('newMessage', generateMessage('Admin','Welcome to the chat room'));
 	socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user has joined the chat room'));
