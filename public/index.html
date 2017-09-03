@@ -9,7 +9,8 @@
     <link rel="stylesheet" type="text/css" href="/css/complete.css">
     <body class="chat">
 	    <div class="chat__sidebar">
-	    	<h3>People</h3>
+	    	<h3>People <span id="users-online"></span></h3>
+        	
 	    	<div class="username-form-container">
 		    	<form id="username-form">
 		    	<div class="form-field">
@@ -35,11 +36,6 @@
 	    	</div>
 
 	    </div>
-<!-- 
-        <p>Welcome to the chat app</p>
-        <p><span>Users Online: </span><span id="users-online"></span></p>
-       
- -->
  		<script id="message-template" type="text/template">
 	 		<li class="message {{class}}">
 	 			<div class="message__title">

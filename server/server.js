@@ -39,14 +39,14 @@ io.on('connection', (socket) => {
 	socket.on('createLocationMessage', (details) => {
 		io.emit('newMessage', generateMessage(details.username,`<a target="_blank" href="https://www.google.com/maps?q=${details.latitude},${details.longitude}">I am here</a>`))
 	});
-	socket.on('userLogin', (login, callback) => {
-		// console.log(socket);
-		user.username = login.username;
-		user.roomname = login.roomname;
+	// socket.on('userLogin', (login, callback) => {
+	// 	// console.log(socket);
+	// 	user.username = login.username;
+	// 	user.roomname = login.roomname;
 
-		console.log(user);
-		callback();
-	});
+	// 	console.log(user);
+	// 	callback();
+	// });
 
 });
 
