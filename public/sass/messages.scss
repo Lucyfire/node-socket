@@ -1,0 +1,19 @@
+#messages-list{
+	list-style: none;
+	li{
+		cursor: pointer;
+		padding: 15px;
+		border-radius: 10px;
+		margin-top:5px;
+		clear: both;
+		max-width: 90%;
+		&.local{
+			background-color: #19bcde;
+			float: right;
+		}
+		&.external{
+			background-color: #10c310;
+			float: left;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+.username-form-container{
+	background: #e6eaee;
+    padding: 10px;
+
+	form{
+		// display: flex;
+		// flex-grow: 1;
+		text-align: center;
+		input{
+			// border:5px solid #2f5881;
+			border:0;
+			padding:10px;
+			width: 100%;
+			max-width: 100%;
+
+		}
+		button{
+			margin: 10px auto 0 auto;
+
+		}
+		.form-field{
+			margin:10px 0;
+		}
+	}
+
+}
