@@ -17,7 +17,6 @@ app.use(express.static(publicPath));
 
 io.on('connection', (socket) => {
 	console.log('New user connect');
-
 	socket.emit('newMessage', generateMessage('Admin','Welcome to the chat room'));
 	socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user has joined the chat room'));
 
@@ -25,10 +24,10 @@ io.on('connection', (socket) => {
 		console.log('User disconnected');
 	});
 
-	socket.on('createMessage', (msgData) => {
+	socket.on('createMessage', (msgData, callback) => {
 		console.log('Create Message', msgData);
-
 		io.emit('newMessage', generateMessage(msgData.from, msgData.text));
+		callback('This is from the server');
 	});
 
 });
