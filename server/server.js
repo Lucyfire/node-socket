@@ -21,15 +21,14 @@ io.on('connection', (socket) => {
 		console.log('User disconnected');
 	});
 
-	socket.emit('newMessage', {
-		'from': 'server',
-		'text': '<p>Hello</p>',
-		'created': 123123123,
-	});
-
 	socket.on('createMessage', (msgData) => {
 		console.log('Create Message', msgData);
 
+		io.emit('newMessage', {
+			'from': msgData.from,
+			'text': msgData.text,
+			'created': new Date().getTime()
+		});
 	});
 
 });
