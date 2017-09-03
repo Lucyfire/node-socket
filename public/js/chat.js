@@ -5,11 +5,13 @@
 	function updateScroll(id, force = false){
 		var el = $(id);
 		
-		var lastMsgHeight = el.children('li:last-child()').height();
+		var lastMsgHeight = $('#messages-list li:last-child()').outerHeight(true);
 		
 		var scrollTop = el.prop('scrollTop');
 		var scrollHeight = el.prop('scrollHeight');
 		var offsetHeight = el.prop('offsetHeight');
+		console.log(offsetHeight, scrollHeight, scrollTop,lastMsgHeight);
+		console.log(offsetHeight + scrollTop + lastMsgHeight , scrollHeight);
 		
 		if(offsetHeight + scrollTop + lastMsgHeight >= scrollHeight || force)
 			el.scrollTop(scrollHeight);
@@ -51,9 +53,9 @@
 		});
 		$('#messages-list').append(html);
 
-		// if(message.from == username)
-		// 	updateScroll('#messages-list', true);
-		// else
+		if(message.from == username)
+			updateScroll('#messages-list', true);
+		else
 			updateScroll('#messages-list');
 	});
 
